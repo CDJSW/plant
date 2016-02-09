@@ -1,0 +1,23 @@
+{
+  "name": "plant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "bower cache clean && bower install"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "body-parser": "^1.14.2",
+    "bower": "^1.7.2",
+    "express": "^4.13.3",
+    "jwt-simple": "^0.4.1",
+    "mysql": "^2.10.2",
+    "pg": "^4.4.4",
+    "nodemailer": "^2.1.0",
+    "sequelize": "^3.18.0"
+  }
+}
