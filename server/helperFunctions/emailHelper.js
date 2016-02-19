@@ -22,6 +22,7 @@ exports.welcomeMessage = function (callback, params) {
   };
   transporter.sendMail(welcomeEmail, function(error, data){
     if(error){
+      console.log(error);
       callback(false, 'Welcome message not sent.')
     }else{
       callback(true, 'Welcome message sent. ' + data.response)
@@ -51,6 +52,7 @@ exports.triggerCallback = function (callback, params) {
           }
           transporter.sendMail(welcomeEmail, function(error, data){
             if(error){
+              console.log(error);
               callback(false, 'Alert notification not sent.');
             }else{
               callback(true, 'Alert notification sent. ' + data.response);

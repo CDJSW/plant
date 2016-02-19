@@ -2,6 +2,8 @@ angular.module('App.loginCtrl',[
 	])
 	.controller('loginCtrl', function($scope, $http, $location, appFactory){
 		$scope.login = function(){
+			console.log("INSIDE LOGIN!");
+			console.log($scope.user, $scope.pass);
 			return $http({
 				method: 'POST',
 				url: 'api/users/signin',
@@ -11,6 +13,7 @@ angular.module('App.loginCtrl',[
 				}
 			})
 			.then(function(success){
+				console.log(success);
 				appFactory.user = success.data.username;
 				appFactory.firstName = success.data.firstname;
 				appFactory.lastName = success.data.lastname;
@@ -18,6 +21,7 @@ angular.module('App.loginCtrl',[
 				window.localStorage.setItem('token', success.data.token);
 				$location.path('/app');
 			}, function(err){
+				console.log("INCORRECT LOGIN");
 			})
 		}
 	})
